@@ -9,7 +9,7 @@ const itemController = require('./controller/itemController.js')
 const path = require('path')
 
 //set up cors policy 
-var corsOptions = {
+var corsOptions = { 
   origin: "http://localhost:8080"
 };
 app.use(cors(corsOptions));
@@ -20,7 +20,7 @@ require('dotenv').config()
 
 
 app.use(express.json());
-mongoose.connect(process.env.DATABASE_CONNECTION_KEY)
+mongoose.connect(process.env.DATABASE_CONNECTION_KEY) //must create a new .env file somehow link to this, will give us mongoDB access
 mongoose.connection.once('open', () => {
     console.log('Connected to Database');
   });
